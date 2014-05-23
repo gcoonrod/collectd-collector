@@ -24,5 +24,5 @@ collectd-collector writes the incoming collectd reports to `/json/data.json`. Us
 Common Errors
 =================
 * `http://LISTENER_HOSTNAME/data` Only responds with `{}`
-** Check that your server is recieving POST commands at `/json`. Use a tool like the Chrome plugin Postman.
-** Check that the `write_http` plugin was compiled in your deployment of Collectd. The `write_http` plugin depends on curl and curl-config during compilation. So you may need to install those applications before recompiling collectd. You can see which plugins have been compiled by looking in the `collecd.conf` file. Any plugins preceeded by `##` were not compiled.
+ * Check that your server is recieving POST commands at `/json`. Use a tool like the Chrome plugin Postman.
+ * Check that the `write_http` plugin was compiled in your deployment of Collectd. The `write_http` plugin depends on curl and curl-config during compilation. So you may need to install those applications before recompiling collectd. You can see which plugins have been compiled by looking in the `collecd.conf` file. Any plugins preceeded by `##` were not compiled.
