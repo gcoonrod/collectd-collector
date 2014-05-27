@@ -149,8 +149,9 @@ var SampleApp = function() {
 
         self.app.post('*', function(req, res){
             var json = {};
-            json.payload = JSON.stringify(req.body, null, 4);
+            json.payload = req.body;
             json.url = req.url;
+            var text = JSON.stringify(json, null, 4);
             console.log(req.body);
 
             if(json === undefined || req.body === undefined){
@@ -159,7 +160,7 @@ var SampleApp = function() {
                     console.log("JSON is undefined");
                 });
             } else {
-               fs.writeFile(json_file, json, function(error){
+               fs.writeFile(json_file, text, function(error){
                     if (error) throw error;
                     console.log("Json written", json);
                     res.send(req.body);
