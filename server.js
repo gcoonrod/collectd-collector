@@ -147,8 +147,10 @@ var SampleApp = function() {
             self.app.get(r, self.routes[r]);
         }
 
-        self.app.post('/json', function(req, res){
-            var json = JSON.stringify(req.body, null, 4);
+        self.app.post('*', function(req, res){
+            var json = {};
+            json.payload = JSON.stringify(req.body, null, 4);
+            json.url = req.url;
             console.log(req.body);
 
             if(json === undefined || req.body === undefined){
