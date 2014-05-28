@@ -164,7 +164,7 @@ var SampleApp = function() {
                     if (error) throw error;
                     console.log("Json written", json);
                     res.send(req.body);
-                }); 
+               }); 
            }
         });
     };
